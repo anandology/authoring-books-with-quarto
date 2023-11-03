@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Authoring Books with Quarto",
+    "section": "",
+    "text": "Preface\nQuarto is a modern publishing system for authoring books and websites.\nThis book is a guide for new authors to learn how to write books using the Quarto publishing system.\nWhile the Quarto Guide is comprehensive documentation on how to use Quarto, it could be a bit overwhelming for those who have not used systems like these. This book is carefully planned to be accessible for the beginners."
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "Quarto is a modern publishing system for authoring books and websites.\nTODO: Write how Quatro works and explain how it is different from tools like Google Docs and Microsoft Word."
+  },
+  {
+    "objectID": "book-structure.html#the-_quarto.yml-file",
+    "href": "book-structure.html#the-_quarto.yml-file",
+    "title": "2  Book Structure",
+    "section": "2.1 The _quarto.yml file",
+    "text": "2.1 The _quarto.yml file\nThe _quarto.yml file specifies the structure of the book and different configuration options to render the book.\nThe _quarto.yml for a typical book looks as follows.\nbook:\n  title: \"My Awesome Book\"\n  author: \"Norah Jones\"\n  date: \"11/2/2023\"\n  chapters:\n    - index.qmd\n    - intro.qmd\n    - summary.qmd\n    - references.qmd\nEach qmd file cooresponds to a chapter.\nThe first entry index.qmd usually contains the preface of the book. It is be called index.qmd so that it serves as home page when the book is rendered as a website."
+  },
+  {
+    "objectID": "book-structure.html#titles",
+    "href": "book-structure.html#titles",
+    "title": "2  Book Structure",
+    "section": "2.2 Titles",
+    "text": "2.2 Titles\nThe _quarto.yml only contains the filenames. The title of each chapter is specified in the corresponding file with a level-one header.\n# Introduction\n\n..."
+  },
+  {
+    "objectID": "book-structure.html#organizing-book-into-chapters",
+    "href": "book-structure.html#organizing-book-into-chapters",
+    "title": "2  Book Structure",
+    "section": "2.3 Organizing Book into Chapters",
+    "text": "2.3 Organizing Book into Chapters\nTo add more chapters to the book, you need to:\n\ncreate a new file for each chapter and add title on the top\ninclude that in the list of chapters in _quarto.yml in the required order.\n\nFor example, to add a chapter titled Book Structure, I need to do the following two things.\nCreate a file book-structure.qmd with a title.\n# Book Structure\n\n...\nAnd include that file in _quarto.yml.\nbook:\n  title: \"My Awesome Book\"\n  author: \"Norah Jones\"\n  date: \"11/2/2023\"\n  chapters:\n    - index.qmd\n    - intro.qmd\n    - book-structure.qmd\n    - summary.qmd\n    - references.qmd"
+  },
+  {
+    "objectID": "book-structure.html#organizing-book-into-parts",
+    "href": "book-structure.html#organizing-book-into-parts",
+    "title": "2  Book Structure",
+    "section": "2.4 Organizing Book into Parts",
+    "text": "2.4 Organizing Book into Parts\nFor some books, it is more natural to organize the book into multiple parts. Here is how you do it with Quarto.\nTypically, when there are multiple parts, it is a good idea to create a directory for each part and add a file with name index.qmd as the description of the part.\nSupport we want to add a part with title Animals with chapters for Elephants, Tigers and Lions.\nThe first thing to do is a to create a directory structure as follows.\nanimals/\n├── elephants.qmd\n├── index.qmd\n├── lions.qmd\n└── tigers.qmd\nThe index.qmd file will be something as follows.\n# Animals\n\nThis part describes about various animals.\nOnce we create all the files and add titles, we can list them in the _quarto.yml file as follows.\nbook:\n  title: \"My Awesome Book\"\n  author: \"Norah Jones\"\n  date: \"11/2/2023\"\n  chapters:\n    - index.qmd\n    - intro.qmd\n    - part: animals/index.qmd\n      chapters:\n        - animals/elephants.qmd\n        - animals/tigers.qmd\n        - animals/lions.qmd\n    - summary.qmd\n    - references.qmd"
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "3  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
+  }
+]
