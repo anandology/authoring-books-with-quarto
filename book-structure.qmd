@@ -85,7 +85,7 @@ animals/
 └── tigers.qmd
 ```
 
-The `index.qmd` file will be something as follows.
+The `animals/index.qmd` file will be something as follows.
 
 ```md
 # Animals
