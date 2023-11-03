@@ -1,0 +1,113 @@
+# Book Structure
+
+A book could be just a list of chapters or it could be organized into multiple parts. There is also possible to have some appendices.
+
+## The `_quarto.yml` file
+
+The `_quarto.yml` file specifies the structure of the book and different configuration options to render the book.
+
+
+The `_quarto.yml` for a typical book looks as follows.
+
+```yaml
+book:
+  title: "My Awesome Book"
+  author: "Norah Jones"
+  date: "11/2/2023"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+```
+
+Each `qmd` file cooresponds to a chapter.
+
+The first entry `index.qmd` usually contains the preface of the book. It is be called `index.qmd` so that it serves as home page when the book is rendered as a website.
+
+## Titles
+
+The `_quarto.yml` only contains the filenames. The title of each chapter is specified in the corresponding file with a level-one header.
+
+```md
+# Introduction
+
+...
+```
+
+## Organizing Book into Chapters
+
+To add more chapters to the book, you need to:
+
+1. create a new file for each chapter and add title on the top
+2. include that in the list of chapters in `_quarto.yml` in the required order.
+
+For example, to add a chapter titled _Book Structure_, I need to do the following two things.
+
+Create a file `book-structure.qmd` with a title.
+
+```md
+# Book Structure
+
+...
+```
+
+And include that file in `_quarto.yml`.
+
+```yml
+book:
+  title: "My Awesome Book"
+  author: "Norah Jones"
+  date: "11/2/2023"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - book-structure.qmd
+    - summary.qmd
+    - references.qmd
+```
+
+## Organizing Book into Parts
+
+For some books, it is more natural to organize the book into multiple parts. Here is how you do it with Quarto.
+
+Typically, when there are multiple parts, it is a good idea to create a directory for each part and add a file with name `index.qmd` as the description of the part.
+
+Support we want to add a part with title _Animals_ with chapters for `Elephants`, `Tigers` and `Lions`.
+
+The first thing to do is a to create a directory structure as follows.
+
+```md
+animals/
+├── elephants.qmd
+├── index.qmd
+├── lions.qmd
+└── tigers.qmd
+```
+
+The `index.qmd` file will be something as follows.
+
+```md
+# Animals
+
+This part describes about various animals.
+```
+
+Once we create all the files and add titles, we can list them in the `_quarto.yml` file as follows.
+
+```yaml
+book:
+  title: "My Awesome Book"
+  author: "Norah Jones"
+  date: "11/2/2023"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - part: animals/index.qmd
+      chapters:
+        - animals/elephants.qmd
+        - animals/tigers.qmd
+        - animals/lions.qmd
+    - summary.qmd
+    - references.qmd
+```

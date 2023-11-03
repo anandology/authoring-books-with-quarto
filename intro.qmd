@@ -1,5 +1,6 @@
 # Introduction
 
-This is a book created from markdown and executable code.
+Quarto is a modern publishing system for authoring books and websites.
 
-See @knuth84 for additional discussion of literate programming.
+TODO: Write how Quatro works and explain how it is different from tools like Google Docs and Microsoft Word.
+

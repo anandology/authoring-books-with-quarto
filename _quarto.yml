@@ -2,12 +2,13 @@ project:
   type: book
 
 book:
-  title: "My Awesome Book"
-  author: "Norah Jones"
+  title: "Authoring Books with Quarto"
+  author: "Anand Chitipothu"
   date: "11/2/2023"
   chapters:
     - index.qmd
     - intro.qmd
+    - book-structure.qmd
     - summary.qmd
     - references.qmd
 

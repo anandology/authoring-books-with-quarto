@@ -1,5 +1,9 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+Quarto is a modern publishing system for authoring books and websites.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+This book is a guide for new authors to learn how to write books using the Quarto publishing system.
+
+While the [Quarto Guide][1] is comprehensive documentation on how to use Quarto, it could be a bit overwhelming for those who have not used systems like these. This book is carefully planned to be accessible for the beginners.
+
+[1]: https://quarto.org/docs/guide/
